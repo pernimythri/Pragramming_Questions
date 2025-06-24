@@ -1,0 +1,25 @@
+Function to print all multiples of ‘n’ from the ‘a’ th multiple to the ‘n’ th multiple:
+
+Test case 1:
+n = 5
+a = 3
+b = 7
+Output: 15 20 25 30 35
+(5 is 1st multiple of 5
+10 is 2nd multiple of 5
+15 is 3rd multiple of 5
+And so on…)
+
+Test case 2:
+n = 10
+a = 8
+b = 11
+Output: 80 90 100 110
+-------------------------------------------
+void Multiple(int num,int a,int b)
+{
+for(int i=a;i<=b;i++)
+{
+System.out.print((num*i)+" ");
+}
+}
