@@ -1,0 +1,47 @@
+Design a single function that prints the following different results:
+1 2 2 3 3 3 4 4 4 4
+
+5 6 6 7 7 7
+
+-2 -1 -1 0 0 0 1 1 1 1 2 2 2 2 2
+
+10 11 11 12 12 12
+
+0 1 1
+
+7
+
+--------------------------------------------------------------------------------
+for each number count increases by 1,
+so to preserve that count I hava used a count variable and 
+to print until that count I have used newCount variable
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		Solution obj=new Solution();
+		obj.fun(n1,n2);
+	}
+}
+
+class Solution{
+    void fun(int n1,int n2){
+        int count=1;
+        for(int i=n1;i<=n2;i++)
+        {
+           int newCount=1;
+            while(newCount<=count)
+            {
+            System.out.print(i+" ");
+            newCount++;
+            }
+            count+=1;
+        }
+    }
+}
