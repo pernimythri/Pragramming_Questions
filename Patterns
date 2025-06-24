@@ -1,4 +1,4 @@
-Output : 10101010...
+Output : 1 0 1 0 1 0 1 0...
 
 public static void pattern(int n)
 	    {
@@ -135,3 +135,64 @@ public class Main
         printTwo(15,3,3);
 	}
 }
+
+-----------------------------------------------------------------------
+Output: 1 2 4 8 16 32 ...............
+
+static void pattern(int n)
+        {
+            for(int i=0;i<=n;i++)
+            {
+                System.out.print((1<<i) +" ");
+            }
+        }
+--------------------------------------------------------------------------
+1 2 3 4 5
+  2 3 4 5
+    3 4 5
+      4 5
+        5
+
+class Solution {
+    public String get(int n) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j < i; j++) {
+                result.append("  "); 
+            }
+            for (int j = i; j <= n; j++) {
+                result.append(j).append(" ");
+            }
+            result.append('\n');
+        }
+        return result.toString();
+    }
+}
+------------------------------------------------------------------------
+print 10 9 8 7 6 5 4 3 2 1... return type is string
+
+class Solution {
+    public String print(int n) {
+        StringBuilder result = new StringBuilder();
+        for (int i = n; i >= 1; i--) {
+            result.append(i).append(" ");
+        }
+        return result.toString().trim();
+    }
+}
+
+           OR
+
+class Solution {
+    public String get(int n) {
+        String[] arr = new String[n];
+        for (int i = 0, x = n; i < arr.length; ++i, --x) {
+            arr[i] = x + "";  
+        }
+        String s = String.join(" ", arr);
+        return s;
+    }
+}
+
+
+-------------------------------------------------------------------------
