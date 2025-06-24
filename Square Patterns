@@ -1,0 +1,92 @@
+0 1 2 3 0 1 2
+3 0 1 2 3 0 1
+2 3 0 1 2 3 0
+1 2 3 0 1 2 3
+0 1 2 3 0 1 2
+
+I came through this approach by taking 'n'(until which digit to print in sequence) , works for any input
+
+To get no.of rows -> if n=3 -> 5 rows -> (n+2)
+To get no.of columns -> if n=3 -> 7 columns -> (n*2)+1
+
+whenever we got 3 in pattern ..it going to zero 
+How to know when it going zero? -> (no.of col)/2 -> (7/2)=3
+so, i wrote if(val==(col/2)) then make val=0 ,else print value
+
+
+import java.util.*;
+class pattern{
+public  static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int num=sc.nextInt();
+    int col=(num*2)+1;
+    int row=num+2;
+    int val=0;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++)
+        {
+            if(val==(col/2)){
+                System.out.print(val+" ");
+                val=0;
+            }
+            else{
+                System.out.print(val+" ");
+                val++;
+            }
+        }
+        System.out.print("\n");
+    }
+    }
+}
+
+
+----------------------------------------------------------------------------
+1 2 3 4 5 4 3
+2 1 2 3 4 5 4
+3 2 1 2 3 4 5
+4 3 2 1 2 3 4
+5 4 3 2 1 2 3
+
+To get no.of rows -> if n=5 -> 5 rows -> n
+To get no.of columns -> if n=5 -> 7 columns -> n+2
+
+whenever we got 5 in pattern ...then it decreasing 
+How to know when it going zero? -> when reaches given number -> 5
+so, i wrote if(val==n) then make flag=1 to tell start decrement -> until 2, then again start 1 so, else part executes
+
+
+import java.util.*;
+class pattern2{
+public  static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+    int num=sc.nextInt();
+    int col=num+2;
+    int row=num;
+    int val=1;
+    int flag=0;
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++)
+        {
+            if(val==num){
+                System.out.print(val+" ");
+                val--;
+                flag=1;
+            }
+            else if(flag==1)
+            {
+                System.out.print(val+" ");
+                val--;
+                if(val==1)
+                {
+                    flag=0;
+                }
+            }
+            else{
+                System.out.print(val+" ");
+                val++;
+            }
+        }
+        System.out.print("\n");
+    }
+    }
+}
