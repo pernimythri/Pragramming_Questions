@@ -45,3 +45,15 @@ class Solution{
         }
     }
 }
+
+------------------------------------------------------------------------
+public static void pattern(int start,int end)
+	    {
+	        int k=1;
+		for(int i=start;i<=end;i++)
+		{
+		   for(int j=1;j<=k;j++)
+		       System.out.print(i+" ");
+		   k++;
+		}
+	    }
