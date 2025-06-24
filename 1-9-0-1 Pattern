@@ -1,0 +1,58 @@
+N = 7
+Output:
+1   23   345   4567   56789   678901   7890123
+
+N = 4
+Output:
+1   23   345   4567
+
+------------------------------------------------
+(1)Row is of pattern 1 2 3 4 5 ...
+(2)row starting position is size of column
+(3)every number incrementing
+(4) if val>=10 it starting from zero(only 0-9) so, val%10
+
+import java.util.*;
+class Main{
+    
+    void pattern(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            int val = i;
+            for (int j = i; j > 0; j--) {
+              System.out.print(val%10);
+              val++;
+        }
+        System.out.println();
+        }
+    }
+----------------------------------------------------------
+What will you do if I put a restriction that say for the 4th value which is 4567, 
+you’ll are currently printing 4 numbers ie 4 then 5 then 6 then 7 without any space between
+but instead you should print just one number 4567 (four thousand five hundred and sixty seven) and not it’s digits separately.
+
+
+import java.util.*;
+class Main{
+    void pattern(int n)
+    {
+       for (int i=1;i<=n;i++) {
+            int val=i;
+            int prevVal=0;
+            for (int j=i;j>0;j--) {
+                prevVal=(prevVal*10)+(val%10);
+                val++;
+            }
+            System.out.println(prevVal);
+       }
+    }
+    public static void main(String[] args)
+    {
+        Main obj=new Main();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        obj.pattern(n);
+    }
+}
+--------------------------------------------------------------
