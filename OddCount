@@ -1,0 +1,33 @@
+To find odd count , first need to know "How many numbers between given numbers"
+
+It means "Ending Number - before starting number",
+
+Ending number refers total numbers from 1 to N
+Ending-(Starting -1) = Ending - Starting + 1
+
+Odd number occurs when Even number occurs and vice versa , and those are alternative (Divide by 2)
+
+If starting and ending both are odd ,odd count is one more than even count
+
+If starting and ending both are even,then even count is one more than odd
+
+If starting odd and ending even or vice versa,then odd count == even count
+
+
+class Solution{
+    int oddCount(int left,int right)
+    {
+        int TotalNumbers=right-left+1;
+        int count=0;
+        if(left%2==1 && right%2==1)
+        {
+            count=(TotalNumbers/2)+1;
+            return count;
+        }
+        else
+        {
+            count=(TotalNumbers/2);
+            return count;
+        }
+    }
+}
