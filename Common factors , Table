@@ -1,0 +1,39 @@
+Define a function that accepts 2 numbers ‘a’ and ‘b’ as parameters, return the ‘count’ which is the number of common divisors of ‘a’ and ‘b’.
+Eg. a = 30, b = 18
+Common divisors: 1, 2, 3, 6
+Count = 4
+
+
+
+int CommonFactors(int n1,int n2)
+	   {
+	        int count=0;
+	      for(int i = 1; i <= Math.min(n1,n2); i++)
+	      {
+	          if((n1 % i== 0) && (n2 % i == 0))
+	          {
+	              count++;
+	          }
+	      }
+	      return count;
+
+
+-----------------------------------------------------
+
+Define a function that accepts a number as parameter and returns it’s multiplication table as a string in the below format:
+Input: 2
+Return:
+String “2 x 1 = 2
+2 x 2 = 4
+… upto
+2 x 10 = 20”
+
+String Table(int n,int length)
+	  {
+	        String sb="";
+	        for(int i=1;i<=length;i++)
+	        {
+	            sb+=n + " * " + i + " = " + n*i +"\n";
+	        }
+	        return sb;
+	   }
