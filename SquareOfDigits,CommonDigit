@@ -1,0 +1,42 @@
+static int sqaureOfALLDigit(int n){
+        int sum=0;
+        while(n>0)
+        {
+            int lastDigit=n%10;
+            sum+=lastDigit*lastDigit;
+            n/=10;
+        }
+        return sum;
+    }
+    
+    
+----------------------------------------------
+    
+static int largestCommonDigit(int n1,int n2){
+        int maxCommon=-1;
+        HashMap<Integer,Integer> map1=new HashMap<>();
+        HashMap<Integer,Integer> map2=new HashMap<>();
+        while(n1>0)
+        {
+            map1.put(n1%10,map1.getOrDefault(n1%10,0)+1);
+            n1/=10;
+        }
+         while(n2>0)
+        {
+            map2.put(n2%10,map2.getOrDefault(n2%10,0)+1);
+            n2/=10;
+        }
+        for(int i:map1.keySet())
+        {
+            if(map2.containsKey(i))
+            {
+                maxCommon=i;
+            }
+        }
+        return maxCommon;
+    }
+    
+    
+    
+    
+    
